@@ -30,6 +30,7 @@ jobs:
         uses: EnricoMi/publish-unit-test-result-action/linux@v2
         if: always()
         with:
+          report_individual_runs: true
           files: |
             ${{github.workspace}}/_build/report.xml
 

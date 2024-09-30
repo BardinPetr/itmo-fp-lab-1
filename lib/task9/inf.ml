@@ -1,12 +1,13 @@
+(** [is_pythagorian a b c] checks that [a] [b] [c] forms pythagorian triplet *)
 let is_pythagorian (a, b, c) = (a * a) + (b * b) = c * c
 
 (** [generate_inf_pairs] is infinite sequence of infinite sequences of integer
     pairs ([a], [b]) such that [a] < [b] *)
 let generate_inf_pairs =
-  Seq.ints 1
-  |> Seq.map (fun a -> a + 1 |> Seq.ints |> Seq.map (fun b -> (a, b)))
+  Seq.ints 1 |> Seq.map (fun a -> Seq.ints (a + 1) |> Seq.map (fun b -> (a, b)))
 
-(** [to_triple_with_sum sum (a, b)] is triple sum of which is [sum]*)
+(** [to_triple_with_sum sum (a, b)] makes triplet by adding component such that
+    sum of triplet equals to [sum]*)
 let to_triple_with_sum sum (a, b) = (a, b, sum - a - b)
 
 (** [generate_triples_up_to_sum sum] if finite sequence of integer triples ([a],
@@ -21,6 +22,8 @@ let generate_triples_up_to_sum sum =
          |> Seq.map (to_triple_with_sum sum)
          |> Seq.take_while (fun (_, b, c) -> b < c))
 
+(** [solve sum] finds one pythagorian triplet sum of which is [sum] by filtering
+    triplets with [is_pythagorian]*)
 let solve sum =
   generate_triples_up_to_sum sum
   |> Seq.find is_pythagorian

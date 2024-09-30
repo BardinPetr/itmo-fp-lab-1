@@ -42,3 +42,5 @@ _opam/
 # Ignore all local history of files
 .history
 .ionide
+
+*.xml
