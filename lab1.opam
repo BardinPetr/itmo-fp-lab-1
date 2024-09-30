@@ -2,6 +2,7 @@
 opam-version: "2.0"
 synopsis: "ITMO FP course laboratory work #1"
 description: "Solutions for Euler project tasks 9 and 21 in OCaml"
+maintainer: ["Bardin Petr"]
 authors: ["Bardin Petr"]
 license: "MIT"
 homepage: "https://github.com/BardinPetr/itmo-fp-lab-1"
@@ -9,6 +10,8 @@ bug-reports: "https://github.com/BardinPetr/itmo-fp-lab-1/issues"
 depends: [
   "ocaml"
   "dune" {>= "3.16"}
+  "alcotest" {with-test}
+  "junit_alcotest" {with-test}
   "odoc" {with-doc}
 ]
 build: [

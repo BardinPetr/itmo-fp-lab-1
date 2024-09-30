@@ -9,10 +9,13 @@
 
 (authors "Bardin Petr")
 
+(maintainers "Bardin Petr")
+
 (license MIT)
 
 (package
  (name lab1)
  (synopsis "ITMO FP course laboratory work #1")
  (description "Solutions for Euler project tasks 9 and 21 in OCaml")
- (depends ocaml dune))
+ (depends ocaml dune (alcotest :with-test) (junit_alcotest :with-test))
+ (allow_empty))
