@@ -16,4 +16,3 @@
  (synopsis "ITMO FP course laboratory work #1")
  (description "Solutions for Euler project tasks 9 and 21 in OCaml")
  (depends ocaml dune))
-

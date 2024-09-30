@@ -1,2 +1,7 @@
-(test
- (name test_lab1))
+; (test
+;  (name test_lab1))
+
+(executable
+ (name test9)
+ (public_name test9)
+ (libraries task9))

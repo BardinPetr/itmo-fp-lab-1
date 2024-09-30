@@ -1,2 +1,5 @@
 profile = default
 version = 0.26.2
+
+parse-docstrings = true
+if-then-else = k-r

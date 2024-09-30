@@ -5,11 +5,10 @@ let div_sum n =
   done;
   !sum
 
-let amicible_sum max =
+let solve max =
   let sum = ref 0 in
   for i = 1 to max - 1 do
     let j = div_sum i in
     if i <> j && div_sum j = i then sum := !sum + i
   done;
   !sum
-
